@@ -16,7 +16,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-                sh 'ssh ${USER}@${SERVER} "cd ${MAGE_ROOT} && git reset --hard && git checkout origin/${GIT_BRANCH} && git pull origin ${GIT_BRANCH} && docker-compose run deploy magento-command setup:upgrade && docker-compose run deploy magento-command setup:di:compile && docker-compose run deploy magento-command setup:static-content:deploy -f && docker-compose run deploy magento-command c:c && docker-compose run deploy magento-command c:f"'
+                sh 'ssh ${USER}@${SERVER} "cd ${MAGE_ROOT} && git reset --hard && git checkout origin/${BRANCH} && git pull origin ${BRANCH} && docker-compose run deploy magento-command setup:upgrade && docker-compose run deploy magento-command setup:di:compile && docker-compose run deploy magento-command setup:static-content:deploy -f && docker-compose run deploy magento-command c:c && docker-compose run deploy magento-command c:f"'
       }
     }
 
