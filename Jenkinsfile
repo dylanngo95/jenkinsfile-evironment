@@ -10,7 +10,7 @@ pipeline {
 
     stage('Code Coverage') {
       steps {
-        exho 'Demo'
+        echo 'Demo'
       }
     }
 
