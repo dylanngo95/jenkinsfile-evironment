@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Init') {
       steps {
+        echo "Github branch is ${BRANCH}"
         sh 'pwd && composer install && vendor/bin/phpcs --config-set installed_paths vendor/magento/magento-coding-standard/Magento2/ '
       }
     }
